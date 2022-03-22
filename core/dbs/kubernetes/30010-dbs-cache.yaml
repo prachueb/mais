@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbs-cache-deployment
+  labels:
+    app: dbs-cache
+spec:
+  selector:
+    matchLabels:
+      app: dbs-cache
+  template:
+    metadata:
+      labels:
+        app: dbs-cache
+    spec:
+      containers:
+        - name: dbs-cache-container
+          image: dbs-cache:1.0-SNAPSHOT
+          ports:
+            # Should to same port in pom.xml and match to targetPort of Service pod
+            - containerPort: 9080
+        # Set the environment variables
+        # should to create the sys-app-root before apply the 10_kubernetes.yaml
+        # $ kubectl create configmap sys-app-root --from-literal cacheHostIP=192.168.49.2 --from-literal cacheHostPort=30000
+        # $ kubectl apply -f 10_kubernetes.yaml
+        # $ kubectl delete configmap
+#          env:
+#          - name: CACHE_HOST_IP
+#            valueFrom:
+#              configMapKeyRef:
+#                name: sys-app-root
+#                key: cacheHostIP
+#                optional: true
+#          - name: CACHE_HOST_PORT
+#            valueFrom:
+#              configMapKeyRef:
+#                name: sys-app-root
+#                key: cacheHostPort
+#                optional: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dbs-cache-service
+spec:
+  # Change to Cluster IP and disable the nodePort in production.
+  type: NodePort
+#  type: ClusterIP
+  selector:
+    app: dbs-cache
+  ports:
+    - protocol: TCP
+      # The port use in the kubernetes cluster.
+      port: 9080
+      # Should to same to the port in pom.xml and containerPort.
+      targetPort: 9080
+      # Use for external call should be between 30000-32768
+      nodePort: 30010

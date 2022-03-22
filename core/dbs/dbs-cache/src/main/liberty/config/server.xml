@@ -1,0 +1,39 @@
+<server description="Sample Liberty server">
+
+    <featureManager>
+        <feature>jaxrs-2.1</feature>
+        <feature>jsonp-1.1</feature>
+        <feature>cdi-2.0</feature>
+        <feature>mpRestClient-2.0</feature>
+        <!-- tag::config[] -->
+        <feature>mpConfig-2.0</feature>
+        <!-- end::config[] -->
+
+    </featureManager>
+
+    <variable name="default.http.port" defaultValue="9080" />
+    <variable name="default.https.port" defaultValue="9443" />
+
+
+<!--
+    <variable name="system.app.username" defaultValue="mais"/>
+    <variable name="system.app.password" defaultValue="siam"/>
+-->
+<!--    <variable name="cache.host.ip" defaultValue="192.168.49.2"/>-->
+<!--    <variable name="cache.host.port" defaultValue="30000"/>-->
+
+
+    <httpEndpoint host="*" httpPort="${default.http.port}"
+        httpsPort="${default.https.port}" id="defaultHttpEndpoint" />
+
+    <webApplication location="dbs-cache.war" contextRoot="/" />
+
+<!--
+    <basicRegistry id="basic" realm="BasicRegistry">
+        <user name="${system.app.username}" password="${system.app.password}" />
+    </basicRegistry>
+-->
+
+<!--    <logging traceSpecification="com.ibm.ws.logging.console.log.level=FINE" />-->
+
+</server>

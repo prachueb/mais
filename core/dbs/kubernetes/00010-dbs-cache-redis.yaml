@@ -1,0 +1,56 @@
+# SOURCE: https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook
+# Use as cache for database site with Port 6379.
+# Keep the next number of transaction in each database site.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbs-cache-redis
+  labels:
+    app: redis
+#    role: leader
+#    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    #        role: leader
+    #        tier: backend
+    spec:
+      containers:
+        - name: dbs-cache-redis
+          image: "docker.io/redis:6.2.6-alpine"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            # Should to same port in pom.xml and match to targetPort of Service pod
+            - containerPort: 6379
+---
+# SOURCE: https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook
+apiVersion: v1
+kind: Service
+metadata:
+  name: dbs-cache-redis-service
+#  labels:
+#    app: redis
+#    role: leader
+#    tier: backend
+spec:
+  #  type: NodePort
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      # The port use in the kubernetes cluster.
+      port: 6379
+      # Should to same to the port in pom.xml and containerPort.
+      targetPort: 6379
+  selector:
+    app: redis
+#    role: leader
+#    tier: backend

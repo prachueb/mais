@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: derby-service
+spec:
+#  type: NodePort
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      # The port use in the kubernetes cluster.
+      port: 1527
+      # Should to same to the port in pom.xml and containerPort.
+      targetPort: 1527
+      # Use for external call should be between 30000-32768
+#      nodePort: 31527
+  selector:
+    app: derby
+#  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: derby
+  labels:
+    app: derby
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: derby
+  template:
+    metadata:
+      labels:
+        app: derby
+    spec:
+      containers:
+      - name: derby
+        image: prachueb/derby:10.14.2.0
+        lifecycle:
+          preStop:
+            exec:
+              command: ["java", "org.apache.derby.drda.NetworkServerControl", "shutdown", "-h", "0.0.0.0"]
+        volumeMounts:
+          - name: database-persistent-storage
+            mountPath: /Database
+      volumes:
+        - name: database-persistent-storage
+          persistentVolumeClaim:
+            claimName: database-pv-claim

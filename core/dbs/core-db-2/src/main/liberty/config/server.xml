@@ -1,0 +1,69 @@
+<server description="Sample Liberty server">
+
+  <featureManager>
+    <feature>jaxrs-2.1</feature>
+    <feature>jsonp-1.1</feature>
+    <feature>cdi-2.0</feature>
+    <feature>jpa-2.2</feature>
+    
+        <!--<feature>jdbc-4.2</feature>-->
+  </featureManager>
+
+<!--<jpa>-->
+<!--    <defaultProperties>-->
+<!--        <property name="javax.persistence.lock.timeout" value="12345"/>-->
+<!--        <property name="eclipselink.cache.shared.default" value="false"/>-->
+<!--    </defaultProperties>-->
+<!--</jpa>-->
+
+  <variable name="default.http.port" defaultValue="5050" />
+  <variable name="default.https.port" defaultValue="5051" />
+<!--  <variable name="default.http.port" defaultValue="9080" />-->
+<!--  <variable name="default.https.port" defaultValue="9443" />-->
+
+  <httpEndpoint httpPort="${default.http.port}" httpsPort="${default.https.port}"
+                id="defaultHttpEndpoint" host="*" />
+
+  <application location="core-db-2.war" type="war" context-root="/"/>
+
+<!--  <logging  traceSpecification="JPA=all" />-->
+<!--  <logging  traceSpecification="eclipselink=all" />-->
+<!--  <logging  traceSpecification="eclipselink.sql=all" />-->
+
+  <!-- Derby Library Configuration -->
+  <library id="derbyJDBCLib">
+    <fileset dir="${shared.resource.dir}/" includes="derby*.jar" />
+  </library>
+
+  <!-- Datasource Configuration -->
+  <!-- tag::data-source[] -->
+  <dataSource id="eventjpadatasource" jndiName="jdbc/eventjpadatasource">
+    <jdbcDriver libraryRef="derbyJDBCLib" />
+    <!-- Embedded derby -->
+    <properties.derby.embedded databaseName="myDb" createDatabase="create" />
+    <!-- Derby client: serve derby server first -->
+<!--    <properties.derby.client databaseName="myDb.db" CreateDatabase="create"-->
+<!--                             serverName="derby-service" portNumber="1527"-->
+<!--                             user="usr" password="pwd" traceLevel="1"/>-->
+  </dataSource>
+
+
+
+    <!-- JDBC Library Configuration -->
+<!--    <library id="jdbcLib">-->
+<!--        <fileset dir="${shared.resource.dir}/" includes="*.jar"/>-->
+<!--    </library>-->
+
+<!--    <dataSource id="DefaultDataSource" jndiName="jdbc/eventjpadatasource">-->
+<!--<dataSource id="eventjpadatasource" jndiName="jdbc/eventjpadatasource">-->
+
+<!--        <jdbcDriver libraryRef="jdbcLib"/>-->
+<!--        <properties serverName="localhost" portNumber="3306"-->
+<!--                    databaseName="myDb"-->
+<!--                    user="usr"-->
+<!--                    password="pwd"/>-->
+<!--    </dataSource>-->
+
+  <!-- end::data-source[] -->
+
+</server>
