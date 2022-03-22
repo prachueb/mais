@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
 
+import com.mais.baseobject.odb.models.ACode;
+
 
 /**
  * <p>Title: Entity class LanguageCode</p>

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 
+import com.mais.baseobject.odb.models.AControlId;
 
 
 /**

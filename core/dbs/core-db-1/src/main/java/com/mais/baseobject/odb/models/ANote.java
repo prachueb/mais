@@ -1,4 +1,4 @@
-package com.mais.base.language.models;
+package com.mais.baseobject.odb.models;
 
 import java.lang.Object;
 import java.util.Arrays;
@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.MappedSuperclass;
+
+import com.mais.baseobject.odb.combindkey.PkIdNote;
 
 /**
  * <p>

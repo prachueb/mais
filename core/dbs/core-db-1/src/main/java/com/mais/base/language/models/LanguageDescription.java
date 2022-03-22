@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
 
+import com.mais.baseobject.odb.models.ADescription;
+
 /**
  * <p>Title: Entity class LanguageDescription</p>
  * <p>Description: description of language.</p>

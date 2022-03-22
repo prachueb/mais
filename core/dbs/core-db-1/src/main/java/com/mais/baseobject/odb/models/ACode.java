@@ -1,4 +1,4 @@
-package com.mais.base.language.models;
+package com.mais.baseobject.odb.models;
 
 import java.lang.Object;
 import java.util.Arrays;

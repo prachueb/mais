@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.mais.baseobject.odb.models.AMain;
+
 /**
  * <p>Title: Entity class LanguageMain</p>
  * <p>Description: main language entity.</p>

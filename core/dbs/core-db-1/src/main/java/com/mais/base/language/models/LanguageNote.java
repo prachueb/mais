@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
 
+import com.mais.baseobject.odb.models.ANote;
+
 /**
  * <p>Title: Entity class LanguageNote</p>
  * <p>Description: note of language.</p>

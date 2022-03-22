@@ -1,8 +1,10 @@
-package com.mais.base.language.models;
+package com.mais.baseobject.odb.models;
 
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.MappedSuperclass;
+
+import com.mais.baseobject.odb.combindkey.PkControlId;
 
 /**
  * <p>
