@@ -75,7 +75,7 @@ public class SystemResource {
 
     try {
       Jedis jedis = new Jedis(hostname, 6379);
-      System.out.println("Connection to server successfully");
+      System.out.println("Connection.java to server successfully");
 
       //check whether server is running or not
       System.out.println("Server is running: " + jedis.ping());
@@ -103,7 +103,7 @@ public class SystemResource {
 
     try {
       Jedis jedis = new Jedis(hostname, 6379);
-      System.out.println("\ngetAllKeyPair\nConnection to server successfully");
+      System.out.println("\ngetAllKeyPair\nConnection.java to server successfully");
 
       //check whether server is running or not
       System.out.println("Server is running: " + jedis.ping() + "\n");
@@ -146,7 +146,7 @@ public class SystemResource {
 
     try {
       Jedis jedis = new Jedis(hostname, 6379);
-      System.out.println("Connection to server successfully");
+      System.out.println("Connection.java to server successfully");
       //check whether server is running or not
       System.out.println("Server is running: "+jedis.ping());
 

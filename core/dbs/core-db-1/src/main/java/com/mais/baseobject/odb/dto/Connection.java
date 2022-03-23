@@ -1,6 +1,7 @@
-package com.mais.base.language;
+package com.mais.baseobject.odb.dto;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * <p>Title: Connection.java</p>
@@ -22,12 +23,12 @@ import java.io.Serializable;
 public class Connection implements Serializable {
     private static final long serialVersionUID = 4549275305565323408L;
 
-//TODO Implement current language, currency, Enterprise, Entity, SubEntity    
+//TODO Implement current language, currency, Enterprise, Entity, SubEntity
 // the available Currency, Language, Enterprise, Entity, SubEntity should be in MetaData EAR
 // Both instance should be in the current model.
-    
-    private long userId = -1;
-    private short siteId = -1;
+
+    private String userId;
+    private String siteId;
 
 
     /**
@@ -40,36 +41,47 @@ public class Connection implements Serializable {
      * To clear all current information.
      */
     public void clear() {
-        setUserId(-1);
-        setSiteId(Short.parseShort("-1"));
+        setUserId("");
+        setSiteId("");
     }
 
     /**
      * @return the userId
      */
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
     /**
      * @param userId the userId to set
      */
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
     /**
      * @return the siteId
      */
-    public short getSiteId() {
+    public String getSiteId() {
         return siteId;
     }
 
     /**
      * @param siteId the siteId to set
      */
-    public void setSiteId(short siteId) {
+    public void setSiteId(String siteId) {
         this.siteId = siteId;
     }
 
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Connection that = (Connection) object;
+        return java.util.Objects.equals(userId, that.userId) && java.util.Objects.equals(siteId, that.siteId);
+    }
+
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), userId, siteId);
+    }
 }

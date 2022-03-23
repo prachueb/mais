@@ -1,4 +1,4 @@
-package com.mais.base.language;
+package com.mais.baseobject.odb.dto;
 
 import java.io.Serializable;
 
@@ -16,13 +16,13 @@ import java.io.Serializable;
 public class Description implements Serializable {
     private static final long serialVersionUID = 973236752335993223L;
     
-    private long languageId;
+    private String languageId;
     private String description;
 
     public Description() {
     }
 
-    public Description(long languageld, String description) {
+    public Description(String languageld, String description) {
         setLanguageId(languageld);
         setDescription(description);
     }
@@ -30,14 +30,14 @@ public class Description implements Serializable {
     /**
 	 * @return the languageId
 	 */
-	public long getLanguageId() {
+	public String getLanguageId() {
 		return languageId;
 	}
 
 	/**
 	 * @param languageId the languageId to set
 	 */
-	public void setLanguageId(long languageId) {
+	public void setLanguageId(String languageId) {
 		this.languageId = languageId;
 	}
 

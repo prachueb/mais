@@ -154,14 +154,14 @@
 //     * @param data DTO subclass
 //     * @return false if don't want to add data
 //     */
-//    abstract protected boolean preAdd(Connection connectionInfo, DTO data);
+//    abstract protected boolean preAdd(Connection.java connectionInfo, DTO data);
 //
 //    /**
 //     * Calling after add data was done
 //     * @param connectionInfo connection information
 //     * @param data DTO subclass
 //     */
-//    abstract protected void postAdd(Connection connectionInfo, DTO data);
+//    abstract protected void postAdd(Connection.java connectionInfo, DTO data);
 //
 //    /**
 //     * Calling before change data to database
@@ -169,14 +169,14 @@
 //     * @param data DTO subclass
 //     * @return false if don't want to change data
 //     */
-//    abstract protected boolean preChange(Connection connectionInfo, DTO data);
+//    abstract protected boolean preChange(Connection.java connectionInfo, DTO data);
 //
 //    /**
 //     * Calling after change data was done
 //     * @param connectionInfo connection information
 //     * @param data DTO subclass
 //     */
-//    abstract protected void postChange(Connection connectionInfo, DTO data);
+//    abstract protected void postChange(Connection.java connectionInfo, DTO data);
 //
 //    /**
 //     * Calling before change code data to database
@@ -185,14 +185,14 @@
 //     * @param newPK new primary key code
 //     * @return false if don't want to change data
 //     */
-//    abstract protected boolean preChangeCode(Connection connectionInfo, String oldPK, String newPK);
+//    abstract protected boolean preChangeCode(Connection.java connectionInfo, String oldPK, String newPK);
 //
 //    /**
 //     * Calling after change code data was done
 //     * @param oldPK old primary key code
 //     * @param newPK new primary key code
 //     */
-//    abstract protected void postChangeCode(Connection connectionInfo, String oldPK, String newPK);
+//    abstract protected void postChangeCode(Connection.java connectionInfo, String oldPK, String newPK);
 //
 //    /**
 //     * Calling before remove data from database
@@ -200,14 +200,14 @@
 //     * @param data DTO subclass
 //     * @return false if don't want to remove data
 //     */
-//    abstract protected boolean preDelete(Connection connectionInfo, DTO data);
+//    abstract protected boolean preDelete(Connection.java connectionInfo, DTO data);
 //
 //    /**
 //     * Calling after remove data was done
 //     * @param connectionInfo connection information
 //     * @param data DTO subclass
 //     */
-//    abstract protected void postDelete(Connection connectionInfo, DTO data);
+//    abstract protected void postDelete(Connection.java connectionInfo, DTO data);
 //
 //    /**
 //     * Calling before reset data to database
@@ -285,7 +285,7 @@
 ////	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 ////    @Transactional(Transactional.TxType.REQUIRES_NEW)
 //    @Override
-//    public DTO add(Connection connectionInfo, DTO data) throws ODBException {
+//    public DTO add(Connection.java connectionInfo, DTO data) throws ODBException {
 //        logger.fine("add code" + data.getCode());
 //
 //        getEntityManager().flush();
@@ -483,7 +483,7 @@
 ////	@TransactionAttribute(TransactionAttributeType.Mandatory)
 ////    @Transactional(Transactional.TxType.REQUIRES_NEW)
 //    @Override
-//    public void change(Connection connectionInfo, DTO data) throws ODBException {
+//    public void change(Connection.java connectionInfo, DTO data) throws ODBException {
 //        logger.fine("change: code: " + data.getCode());
 //
 //        if (!preChange(connectionInfo, data)) {
@@ -562,7 +562,7 @@
 ////	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 ////    @Transactional(Transactional.TxType.REQUIRES_NEW)
 //    @Override
-//    public void changeCode(Connection connectionInfo, String oldPK, String newPK) throws ODBException {
+//    public void changeCode(Connection.java connectionInfo, String oldPK, String newPK) throws ODBException {
 //        logger.fine("userODB.changePK: " + oldPK + " to: " + newPK);
 //
 //        if (!preChangeCode(connectionInfo, oldPK, newPK)) {
@@ -622,7 +622,7 @@
 ////	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 ////    @Transactional(Transactional.TxType.REQUIRES_NEW)
 //    @Override
-//    public void delete(Connection connectionInfo, DTO data) throws ODBException {
+//    public void delete(Connection.java connectionInfo, DTO data) throws ODBException {
 //        logger.fine("delete: " + data.getCode());
 //
 //        if (!preDelete(connectionInfo, data)) {
@@ -1034,7 +1034,7 @@
 //     * @param data DTO subclass instance
 //     * @param connectionInfo Current information of userId, siteId.
 //     */
-//    private void _prepareEditData(ACode code, AMain main, DTO data, Connection connectionInfo) {
+//    private void _prepareEditData(ACode code, AMain main, DTO data, Connection.java connectionInfo) {
 //        if (data.getCode() == null) {
 //            data.setCode(code.getCode());
 //        }
@@ -1087,7 +1087,7 @@
 //     * @param data DTO subclass instance
 //     * @param connectionInfo Current information of userId, siteId.
 //     */
-//    private void _storePrimaryKey(ACode code, AMain main, DTO data, Connection connectionInfo) {
+//    private void _storePrimaryKey(ACode code, AMain main, DTO data, Connection.java connectionInfo) {
 //        logger.fine("_storePrimaryKey code: " + code + " main: " + main);
 //        code.setId(nextID);
 //        main.setId(nextID);
@@ -1104,7 +1104,7 @@
 //     * @param data DTO subclass instance
 //     * @param connectionInfo Current information of userId, siteId.
 //     */
-//    private void _storeData(ACode code, AMain main, DTO data, Connection connectionInfo) {
+//    private void _storeData(ACode code, AMain main, DTO data, Connection.java connectionInfo) {
 //        logger.fine("_StoreData code: " + code + " main: " + main);
 //
 //        code.setCode(data.getCode());
@@ -1216,7 +1216,7 @@
 //     * @param connectionInfo Current information of userId, siteId.
 //     */
 //	@TransactionAttribute(TransactionAttributeType.MANDATORY)
-//    private void _addLingual(ACode code, AMain main, DTO data, Connection connectionInfo) {
+//    private void _addLingual(ACode code, AMain main, DTO data, Connection.java connectionInfo) {
 //        logger.fine("_addLingual: size = " + data.getLingualDescription().size());
 //
 //        if (data.isMultilingual()) {
@@ -1259,10 +1259,10 @@
 //     * @param code ACode entity subclass instance
 //     * @param main AMain entity subclass instance
 //     * @param data DTO subclass instance
-//     * @param connectionInfo Connection information of userId, siteId.
+//     * @param connectionInfo Connection.java information of userId, siteId.
 //     */
 //	@TransactionAttribute(TransactionAttributeType.MANDATORY)
-//    private void _addNote(ACode code, AMain main, DTO data, Connection connectionInfo) {
+//    private void _addNote(ACode code, AMain main, DTO data, Connection.java connectionInfo) {
 //        logger.fine("_addNote: size = " + data.getNoteList().size());
 //
 //        if (data.isHasNotes()) {

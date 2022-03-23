@@ -1,4 +1,4 @@
-package com.mais.base.language;
+package com.mais.baseobject.odb.Exception;
 
 /**
  * <p>Title: ODBException</p>

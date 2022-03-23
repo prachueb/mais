@@ -59,7 +59,7 @@
 //	 * @throws ODBException
 //	 */
 ////	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-//	abstract public DTO add(Connection connectionInfo, DTO data)
+//	abstract public DTO add(Connection.java connectionInfo, DTO data)
 //	throws ODBException;
 //
 //	/**
@@ -87,7 +87,7 @@
 //	 * @param data
 //	 * @throws ODBException
 //	 */
-//	abstract public void change(Connection connectionInfo, DTO data)
+//	abstract public void change(Connection.java connectionInfo, DTO data)
 //	throws ODBException;
 //
 //	/**
@@ -100,7 +100,7 @@
 //	 * @param newPK
 //	 * @throws ODBException
 //	 */
-//	abstract public void changeCode(Connection connectionInfo, String oldPK,String newPK)
+//	abstract public void changeCode(Connection.java connectionInfo, String oldPK,String newPK)
 //	throws ODBException;
 //
 //	/**
@@ -112,7 +112,7 @@
 //	 * @param data
 //	 * @throws ODBException
 //	 */
-//	abstract public void delete(Connection connectionInfo, DTO data)
+//	abstract public void delete(Connection.java connectionInfo, DTO data)
 //	throws ODBException;
 //
 ////	/**

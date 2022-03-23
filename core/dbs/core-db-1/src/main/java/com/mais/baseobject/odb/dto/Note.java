@@ -1,4 +1,4 @@
-package com.mais.base.language;
+package com.mais.baseobject.odb.dto;
 
 import java.io.Serializable;
 
@@ -15,13 +15,13 @@ import java.io.Serializable;
  */
 public class Note implements Serializable  {
     private static final long serialVersionUID = 973236732275873234L;
-    private long internalId;
+    private short internalId;
     private String note;
 
     public Note() {
     }
 
-    public Note(long internald, String note) {
+    public Note(short internald, String note) {
         setInternalId(internald);
         setNote(note);
     }
@@ -36,7 +36,7 @@ public class Note implements Serializable  {
     /**
      * @param internalID the internalID to set
      */
-    public void setInternalId(long internalId) {
+    public void setInternalId(short internalId) {
         this.internalId = internalId;
     }
 

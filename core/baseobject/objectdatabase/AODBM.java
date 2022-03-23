@@ -1271,7 +1271,7 @@ public abstract class AODBM extends AODB implements AODBRemote {
      * @param code ACode entity subclass instance
      * @param main AMain entity subclass instance
      * @param data DTO subclass instance
-     * @param connectionInfo Connection information of userId, siteId.
+     * @param connectionInfo Connection.java information of userId, siteId.
      */
 	@TransactionAttribute(TransactionAttributeType.MANDATORY)
     private void _addNote(ACode code, AMain main, DTO data, Connection connectionInfo) {

@@ -168,7 +168,7 @@ public class PublishPersistence implements PublishPersistenceLocal {
 	}
 
 //	private void publish(String command, PersistInfo pInformation,
-//			baseobject.context.Connection connectionInfo, DTO data) {
+//			baseobject.context.Connection.java connectionInfo, DTO data) {
 //		logger.info("in publish ...");
 ////		pInfo = pInformation;
 ////		if (pInfo.getReplicateTo() == null)
@@ -242,7 +242,7 @@ public class PublishPersistence implements PublishPersistenceLocal {
 	}
 
 //	public void create(PersistInfo pInformation,
-//			baseobject.context.Connection connectionInfo, DTO data) {
+//			baseobject.context.Connection.java connectionInfo, DTO data) {
 //		logger.info("cfreate JMS");
 //		publish("create", pInformation, connectionInfo, data);
 //		// pInfo = pInformation;
@@ -263,22 +263,22 @@ public class PublishPersistence implements PublishPersistenceLocal {
 //	}
 //
 //	public void edit(PersistInfo pInformation,
-//			baseobject.context.Connection connectionInfo, DTO data) {
+//			baseobject.context.Connection.java connectionInfo, DTO data) {
 //		publish("edit", pInformation, connectionInfo, data);
 //	}
 //
 //	// public void changeCode(PersistInfo pInformation,
-//	// baseobject.context.Connection connectiontInfo, DTOStringString data) {
+//	// baseobject.context.Connection.java connectiontInfo, DTOStringString data) {
 //	// // publish("changeCode", pInformation, currentInfo, data);
 //	// }
 //
 //	public void setActive(PersistInfo pInformation,
-//			baseobject.context.Connection connectionInfo, DTO data) {
+//			baseobject.context.Connection.java connectionInfo, DTO data) {
 //		publish("setActive", pInformation, connectionInfo, data);
 //	}
 //
 //	public void destroy(PersistInfo pInformation,
-//			baseobject.context.Connection connectionInfo, DTO data) {
+//			baseobject.context.Connection.java connectionInfo, DTO data) {
 //		publish("destroy", pInformation, connectionInfo, data);
 //	}
 

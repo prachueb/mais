@@ -1,8 +1,12 @@
 package com.mais.base.language;
 
+import jakarta.persistence.*;
+
+import com.mais.baseobject.odb.*;
+import com.mais.base.language.models.*;
 /**
  * <p>
- * Title: LanguageDAO
+ * Title: LanguageDAO.java
  * </p>
  * <p>
  * Description: Language Data Access Object.
@@ -34,8 +38,8 @@ package com.mais.base.language;
 //@Remote({ LanguageODBRemote.class })
 public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 
-    @PersistenceContex(name = "jpa-unit")
-    private EntityManger em;
+//    @PersistenceContex(name = "jpa-unit")
+//    private EntityManger em;
 
 
 //    // @PersistenceContext // (unitName="base-ejbPU")
@@ -59,7 +63,7 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
     private LanguageDTO languageDTO;
 
     /**
-     * Creates a new instance of LanguageDAO.
+     * Creates a new instance of LanguageDAO.java.
      */
     public LanguageDAO() {
         super();
@@ -314,10 +318,10 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#postAdd(Connection, DTO)
+//     * @see baseobject.objectdatabase.AODBM#postAdd(Connection.java, DTO)
 //     */
 //    @Override
-//    protected void postAdd(Connection connectionInfo, DTO data) {
+//    protected void postAdd(Connection.java connectionInfo, DTO data) {
 //        // TODO Auto-generated method stub
 //
 //    }
@@ -325,10 +329,10 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#postChange(Connection, DTO)
+//     * @see baseobject.objectdatabase.AODBM#postChange(Connection.java, DTO)
 //     */
 //    @Override
-//    protected void postChange(Connection connectionInfo, DTO data) {
+//    protected void postChange(Connection.java connectionInfo, DTO data) {
 //        // TODO Auto-generated method stub
 //
 //    }
@@ -336,11 +340,11 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#postChangeCode(Connection, String,
+//     * @see baseobject.objectdatabase.AODBM#postChangeCode(Connection.java, String,
 //     * String)
 //     */
 //    @Override
-//    protected void postChangeCode(Connection connectionInfo, String oldPK,
+//    protected void postChangeCode(Connection.java connectionInfo, String oldPK,
 //                                  String newPK) {
 //        // TODO Auto-generated method stub
 //
@@ -349,10 +353,10 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#postDelete(Connection, DTO)
+//     * @see baseobject.objectdatabase.AODBM#postDelete(Connection.java, DTO)
 //     */
 //    @Override
-//    protected void postDelete(Connection connectionInfo, DTO data) {
+//    protected void postDelete(Connection.java connectionInfo, DTO data) {
 //        // TODO Auto-generated method stub
 //
 //    }
@@ -371,10 +375,10 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#preAdd(Connection, DTO)
+//     * @see baseobject.objectdatabase.AODBM#preAdd(Connection.java, DTO)
 //     */
 //    @Override
-//    protected boolean preAdd(Connection connectionInfo, DTO data) {
+//    protected boolean preAdd(Connection.java connectionInfo, DTO data) {
 //        // TODO Auto-generated method stub
 //        return true;
 //    }
@@ -382,10 +386,10 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#preChange(Connection, DTO)
+//     * @see baseobject.objectdatabase.AODBM#preChange(Connection.java, DTO)
 //     */
 //    @Override
-//    protected boolean preChange(Connection connectionInfo, DTO data) {
+//    protected boolean preChange(Connection.java connectionInfo, DTO data) {
 //        // TODO Auto-generated method stub
 //        return true;
 //    }
@@ -393,11 +397,11 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#preChangeCode(Connection, String,
+//     * @see baseobject.objectdatabase.AODBM#preChangeCode(Connection.java, String,
 //     * String)
 //     */
 //    @Override
-//    protected boolean preChangeCode(Connection connectionInfo, String oldPK,
+//    protected boolean preChangeCode(Connection.java connectionInfo, String oldPK,
 //                                    String newPK) {
 //        // TODO Auto-generated method stub
 //        return true;
@@ -406,10 +410,10 @@ public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see baseobject.objectdatabase.AODBM#preDelete(Connection, DTO)
+//     * @see baseobject.objectdatabase.AODBM#preDelete(Connection.java, DTO)
 //     */
 //    @Override
-//    protected boolean preDelete(Connection connectionInfo, DTO data) {
+//    protected boolean preDelete(Connection.java connectionInfo, DTO data) {
 //        // TODO Auto-generated method stub
 //        return true;
 //    }

@@ -1,5 +1,6 @@
 package com.mais.base.language;
 
+import com.mais.baseobject.odb.dto.DTO;
 
 /**
  * <p>
@@ -20,17 +21,17 @@ package com.mais.base.language;
 public class LanguageDTO extends DTO {
 	private static final long serialVersionUID = 5037367393070214185L;
 
-	/**
-	 * Basic copy should to have the coding of
-	 * super._copyDTO(data);
-	 */
-	@Override
-	public boolean copy(DTO data) {
-		if (data == null)
-			return false;
-		super._copyDTO(data);
-		
-		return true;
-	}
+//	/**
+//	 * Basic copy should to have the coding of
+//	 * super.copyDTO(data);
+//	 */
+//	@Override
+//	public boolean copy(DTO data) {
+//		if (data == null)
+//			return false;
+//		super.copyDTO(data);
+//
+//		return true;
+//	}
 
 }
