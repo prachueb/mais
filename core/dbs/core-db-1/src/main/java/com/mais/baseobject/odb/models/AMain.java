@@ -13,14 +13,15 @@ import java.lang.Object;
 import java.util.Arrays;
 import java.util.Date;
 
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Lob;
-import javax.persistence.Basic;
-import javax.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+//import jakarta.persistence.Lob;
+import jakarta.persistence.Basic;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Column;
 
 /**
  * <p>
@@ -43,21 +44,25 @@ import javax.persistence.FetchType;
 //@Index(columnList="CREATESITE")})  // Index in @MappedSuperclass not work!
 public abstract class AMain {
 
+    // The primary key will automatic generate index.
+    // The index useful in WHERE not in ORDER BY
     @Id
+    @Column(columnDefinition="CHAR(30)")
     private String id;
 
     protected byte[] barcode;
     private String barcodeCode;
 
-    private short createSite;
-    private long createUser;
+    private String createSite;
+    private String createUser;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
-    private long updateUser;
+    private String updateUser;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateDate;
 
 //    private boolean replicate;  // No need to flag. Should to publish to massage bus anyway for other purpose.
+    @Column(length=30)
     private String replicateSite;
 
     /**
@@ -142,19 +147,19 @@ public abstract class AMain {
         this.barcodeCode = barcodeCode;
     }
 
-    public short getCreateSite() {
+    public String getCreateSite() {
         return createSite;
     }
 
-    public void setCreateSite(short createSite) {
+    public void setCreateSite(String createSite) {
         this.createSite = createSite;
     }
 
-    public long getCreateUser() {
+    public String getCreateUser() {
         return createUser;
     }
 
-    public void setCreateUser(long createUser) {
+    public void setCreateUser(String createUser) {
         this.createUser = createUser;
     }
 
@@ -166,11 +171,11 @@ public abstract class AMain {
         this.createDate = createDate;
     }
 
-    public long getUpdateUser() {
+    public String getUpdateUser() {
         return updateUser;
     }
 
-    public void setUpdateUser(long updateUser) {
+    public void setUpdateUser(String updateUser) {
         this.updateUser = updateUser;
     }
 

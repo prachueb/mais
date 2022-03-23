@@ -8,7 +8,7 @@ package com.mais.baseobject.odb.models;
  */
 
 
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.MappedSuperclass;
 
 /**
  * <p>

@@ -2,9 +2,9 @@ package com.mais.base.language.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
+import jakarta.persistence.Table;
 
 import com.mais.baseobject.odb.models.ACode;
 
@@ -35,10 +35,15 @@ import com.mais.baseobject.odb.models.ACode;
 //})
 @SuppressWarnings("serial")
 @Entity
-//@Table(indexes={@Index(columnList="CODE"),
-//@Index(columnList="BARCODECODE")})
-@Table(indexes={@Index(columnList="SHORTNAME")})  // ,
-//        @Index(columnList="CREATESITE")})  // Index in @MappedSuperclass not work!
+// The index useful in WHERE not in ORDER BY
+@Table(  indexes = {
+        @Index( name = "index_id",
+                columnList="id, active",
+                unique = false),
+        @Index( name = "index_shortName",
+                columnList="shortName, active",
+                unique = false)
+                })
 public class LanguageCode extends ACode implements Serializable {
 //    private static final long serialVersionUID = 2453234206406932008L;
 

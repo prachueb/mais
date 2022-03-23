@@ -2,7 +2,7 @@ package com.mais.base.language.models;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import com.mais.baseobject.odb.models.AMain;
 

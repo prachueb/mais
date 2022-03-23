@@ -106,7 +106,7 @@ The *.war application using Openliberty should to place the *derby jar files* in
 
 # Derby tool
 
-`$ docker exec -it derby-service /bin/sh`
+`$ docker exec -it derby /bin/sh`
 
 `ij> HELP;`
 

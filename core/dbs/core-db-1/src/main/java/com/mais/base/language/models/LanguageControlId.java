@@ -2,7 +2,7 @@ package com.mais.base.language.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 
 import com.mais.baseobject.odb.models.AControlId;
 

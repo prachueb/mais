@@ -3,9 +3,10 @@ package com.mais.baseobject.odb.models;
 import java.lang.Object;
 import java.util.Arrays;
 
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Column;
 
 import com.mais.baseobject.odb.combindkey.PkIdLanguage;
 
@@ -36,9 +37,12 @@ import com.mais.baseobject.odb.combindkey.PkIdLanguage;
 //@Index(columnList="DESCRIPTION")})  // Index in @MappedSuperclass not work!
 public abstract class ADescription {
 
+    // The combind primary key will automatic generate index.
     @Id
+    @Column(columnDefinition="CHAR(30)")
     private String id;
     @Id
+    @Column(columnDefinition="CHAR(30)")
     private String languageId;
     private String description;
 

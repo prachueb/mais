@@ -3,10 +3,10 @@ package com.mais.baseobject.odb.models;
 import java.lang.Object;
 import java.util.Arrays;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.MappedSuperclass;
 
 import com.mais.baseobject.odb.combindkey.PkIdNote;
 
@@ -34,11 +34,13 @@ import com.mais.baseobject.odb.combindkey.PkIdNote;
 //@Index(columnList="ORDERID")})  // Index in @MappedSuperclass not work!
 public abstract class ANote {
 
+    // The combind primary key will automatic generate index.
+    // The index useful in WHERE not in ORDER BY
     @Id
+    @Column(columnDefinition="CHAR(30)")
     private String id;
     @Id
-    private long orderId;
-	@Column(length=1024)
+    private short orderId;
     private String note;
 
     /** Creates a new instance of ANote */
@@ -66,14 +68,14 @@ public abstract class ANote {
     /**
      * @return the orderId
      */
-    public long getOrderId() {
+    public short getOrderId() {
         return orderId;
     }
 
     /**
      * @param orderId the orderId to set
      */
-    public void setOrderId(long orderId) {
+    public void setOrderId(short orderId) {
         this.orderId = orderId;
     }
 

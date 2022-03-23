@@ -2,6 +2,7 @@ package com.mais.baseobject.odb.combindkey;
 
 import java.io.Serializable;
 
+
 /**
  * <p>Title: PkIdNote</p>
  * <p>Description: Combined primary key of abstract super class for all note entity.</p>
@@ -17,7 +18,7 @@ public class PkIdNote implements Serializable { // extends DTO{
     private static final long serialVersionUID = 6453222267875993223L;
 
     protected String id;
-    protected long orderId;
+    protected short orderId;
 
     /**
      * Creates a new instance of PkIdNote
@@ -25,7 +26,7 @@ public class PkIdNote implements Serializable { // extends DTO{
     public PkIdNote() {
     }
 
-    public PkIdNote(String Id, long OrderId) {
+    public PkIdNote(String Id, short OrderId) {
         this.id = Id;
         this.orderId = OrderId;
     }
@@ -47,14 +48,14 @@ public class PkIdNote implements Serializable { // extends DTO{
     /**
      * @return the orderId
      */
-    public long getOrderId() {
+    public short getOrderId() {
         return orderId;
     }
 
     /**
      * @param orderId the orderId to set
      */
-    public void setOrderId(long orderId) {
+    public void setOrderId(short orderId) {
         this.orderId = orderId;
     }
 

@@ -4,10 +4,12 @@ import java.lang.Object;
 import java.util.Arrays;
 import java.util.Date;
 
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.persistence.Column;
+
 /**
  * <p>
  * Title: ACode
@@ -33,7 +35,10 @@ import javax.persistence.TemporalType;
 //@Index(columnList="BARCODECODE")}) // Index in @MappedSuperclass not work!
 public abstract class ACode {
 
+    // The primary key will automatic generate index.
+    // The index useful in WHERE not in ORDER BY
     @Id
+    @Column(columnDefinition="CHAR(30)")
     private String id;
 	private String shortName;
 	private String description;

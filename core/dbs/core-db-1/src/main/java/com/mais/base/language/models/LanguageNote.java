@@ -2,9 +2,9 @@ package com.mais.base.language.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
+import jakarta.persistence.Table;
 
 import com.mais.baseobject.odb.models.ANote;
 
