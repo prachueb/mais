@@ -35,7 +35,7 @@
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
         <property name="javax.persistence.schema-generation.database.action"
-                  value="drop-and-create"/>
+                  value="drop-and-add"/>
     </properties>
 </persistence-unit>
 </persistence>

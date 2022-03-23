@@ -25,4 +25,4 @@ hs_err_pid*
 *.iml
 .idea/
 */target/*
-*/rdbms-engine/derby/docker-derby-10.14.2.0.withoutHC/*
+*/rdbms-engine/derby/*

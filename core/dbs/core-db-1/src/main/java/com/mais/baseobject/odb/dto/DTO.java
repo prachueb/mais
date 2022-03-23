@@ -23,7 +23,7 @@ public abstract class DTO extends ShortDTO implements Serializable {
 
 //    Example JSON-B as Book is DTO
 //    Book book = new Book("Java 11", LocalDate.now(), 1, false, "Duke", new BigDecimal(44.444));
-//    Jsonb jsonb = JsonbBuilder.create();
+//    Jsonb jsonb = JsonbBuilder.add();
 //    String resultJson = jsonb.toJson(book);
 //    Book serializedBook = jsonb.fromJson(resultJson, Book.class);
 

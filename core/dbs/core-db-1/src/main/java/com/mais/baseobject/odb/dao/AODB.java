@@ -3,7 +3,6 @@ package com.mais.baseobject.odb.dao;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.mais.baseobject.odb.models.*;
 import com.mais.baseobject.odb.dto.*;
 import com.mais.baseobject.odb.Exception.*;
 
@@ -19,10 +18,10 @@ import com.mais.baseobject.odb.Exception.*;
  * It served as gateway to access all the entity's tables.
  * </P>
  * <P>
- * Using abstract of create, edit, changeCode, destroy because it should be declare
+ * Using abstract of add, edit, changeCode, destroy because it should be declare
  * local or remote interface for EJB calling.
  * <P>
- * All the create, edit, changeCode, destroy mechanism was in _create, _edit, _changeCode, and
+ * All the add, edit, changeCode, destroy mechanism was in _create, _edit, _changeCode, and
  * _destroy methods that should be call from each abstract method respectively.
  * <p>
  * Copyright: Copyright (c) 2010
@@ -50,7 +49,7 @@ public abstract class AODB {
 
 	/**
 	 * To add new persistence.
-	 * The statement "super.create(connectionInfo, data);"
+	 * The statement "super.add(connectionInfo, data);"
 	 * should be declare.
 	 * Local and remote interfaces should be done for EJB calling.
 	 * @param connectionInfo
@@ -59,7 +58,7 @@ public abstract class AODB {
 	 * @throws ODBException
 	 */
 //	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	abstract public DTO create(Connection connectionInfo, DTO data)
+	abstract public DTO add(Connection connectionInfo, DTO data)
 	throws ODBException;
 
 	/**
@@ -113,7 +112,7 @@ public abstract class AODB {
 	 * @param data
 	 * @throws ODBException
 	 */
-	abstract public void update(Connection connectionInfo, DTO data)
+	abstract public void change(Connection connectionInfo, DTO data)
 	throws ODBException;
 
 	/**

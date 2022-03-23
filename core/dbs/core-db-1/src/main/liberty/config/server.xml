@@ -46,12 +46,12 @@
     <!-- Embedded derby -->
     <properties.derby.embedded databaseName="myDb" createDatabase="create" />
       <!-- Derby client: inside kubernetes cluster -->
-      <!--    <properties.derby.client databaseName="myDb.db" CreateDatabase="create"-->
+      <!--    <properties.derby.client databaseName="myDb.db" CreateDatabase="add"-->
       <!--                             serverName="derby-service" portNumber="1527"-->
       <!--                             user="usr" password="pwd" traceLevel="1"/>-->
       <!-- Derby client: serve derby server first -->
       <!-- $ docker run - -rm - -detach -p 1527:1527 - -name derby prachueb/derby:10.14.2.0 -->
-<!--          <properties.derby.client databaseName="myDb.db" CreateDatabase="create"-->
+<!--          <properties.derby.client databaseName="myDb.db" CreateDatabase="add"-->
 <!--                                   serverName="localhost" portNumber="1527"-->
 <!--                                   user="usr" password="pwd" traceLevel="1"/>-->
   </dataSource>

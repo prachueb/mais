@@ -1,9 +1,12 @@
 package com.mais.base.language;
 
-import jakarta.persistence.*;
+import com.mais.base.language.models.LanguageCode;
+import com.mais.base.language.models.LanguageControlId;
+import com.mais.base.language.models.LanguageMain;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
 
-import com.mais.baseobject.odb.*;
-import com.mais.base.language.models.*;
 /**
  * <p>
  * Title: LanguageDAO.java
@@ -36,14 +39,29 @@ import com.mais.base.language.models.*;
 // @Stateless
 //@Stateless(mappedName = "LanguageODBBean/remote")
 //@Remote({ LanguageODBRemote.class })
+@RequestScoped
 public class LanguageDAO { // extends AODBMBase implements LanguageODBRemote {
 
-//    @PersistenceContex(name = "jpa-unit")
+    // tag::PersistenceContext[]
+    @PersistenceContext(name = "jpa-unit")
+    // end::PersistenceContext[]
+    private EntityManager em;
+
+//    @PersistenceContext(name = "jpa-unit")
 //    private EntityManger em;
 
 
 //    // @PersistenceContext // (unitName="base-ejbPU")
 //    // private EntityManager em;
+
+//    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
+//    EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(employee);
+//        entityManager.getTransaction().commit();
+//        entityManager.close();
+//        entityManagerFactory.close();
+
 
     /**
      * Code entity.
